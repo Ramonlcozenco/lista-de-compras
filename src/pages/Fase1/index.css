@@ -1,0 +1,69 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+body {
+  background-color: rgb(202, 119, 119);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+ 
+}
+
+h1 { 
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#produtoInput {
+  margin-top: 10px;
+  font-size: 20px;
+  font-style: italic;
+  border-radius: 10px;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.botaoAdcionar {
+border-radius: 10px;
+width: 8rem;
+height: 2rem ;
+font-size: large;
+font-style: italic;
+padding: 5px 10px;
+color: #000;
+background: #6cf000;
+cursor: pointer;
+
+}
+.listaProdutos{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 0 10px;
+
+}
+p{
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+#botaoLixeira{
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+
+
+
