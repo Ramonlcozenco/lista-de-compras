@@ -1,23 +1,25 @@
 
 import {useState} from 'react'
 import {v4 as uuid} from 'uuid'
+import { useOnKeyPress } from './hook/useOnKeyPress'
 import './index.css'
+
 
  
 function Home2() {
   const [produtos, setProdutos] = useState([]) //array (lista dos produtos digitados)
   const [produtoParaEditar, setProdutoParaEditar] = useState() //Estado que salva o produto que esta sendo editado
   const [nomeProduto, setNomeProduto] = useState('') //input
- 
+  
   function limparDados(){
   setProdutoParaEditar(undefined)
   setNomeProduto("")
   }
-  
+
   function salvarProduto() { //Checando se estamos editando ou não, através do produtoParaEditar existindo 
-    //(usamos o !! para checar se um valor é verdadeiro)
+                            
     
-    if(!!produtoParaEditar) {
+    if(!!produtoParaEditar) {//(usamos o !! para checar se um valor é verdadeiro)
 
       
       const novosProdutos = produtos.map(prod => {  //criamos um novo array com o .map
@@ -37,6 +39,8 @@ function Home2() {
 
       return;
     }
+      
+   
     setProdutos(prev =>([{ id: uuid(), title: nomeProduto}, ...prev])) //Adiciona um novo produto e só
     limparDados()
   } 
@@ -52,6 +56,10 @@ function Home2() {
   setProdutos(produtos.filter(produto => produto.id !== id))
  } 
  
+useOnKeyPress(salvarProduto, 'Enter');
+
+
+
  return (
     <div>
       <h1>Lista de Compras</h1>
@@ -59,8 +67,9 @@ function Home2() {
       <button className='botaoAdcionar' onClick={salvarProduto} >{!!produtoParaEditar ? 'Salvar' : "Adicionar"}</button>
 
       {produtos.map((produto) =>(
-          <div className='listaProdutos' key={produto.id} style={{
-            border: produto.id === produtoParaEditar?.id ? "2px solid green" : undefined
+          <div className='listaProdutos' key={produto.id} style= {{
+
+            border: produto.id === produtoParaEditar?.id ? "2px solid green"  : undefined 
           }}>
             <p>{produto.title}</p>
               <div>
