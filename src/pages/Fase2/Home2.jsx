@@ -10,10 +10,7 @@ function Home2() {
   const [produtos, setProdutos] = useState([]) //array (lista dos produtos digitados)
   const [produtoParaEditar, setProdutoParaEditar] = useState() //Estado que salva o produto que esta sendo editado
   const [nomeProduto, setNomeProduto] = useState('') //input
-
-
- 
-
+  
   function limparDados(){
   setProdutoParaEditar(undefined)
   setNomeProduto("")
