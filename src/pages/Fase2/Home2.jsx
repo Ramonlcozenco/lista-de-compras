@@ -59,7 +59,6 @@ function Home2() {
 useOnKeyPress(salvarProduto, 'Enter');
 
 
-
  return (
     <div>
       <h1>Lista de Compras</h1>
@@ -69,7 +68,7 @@ useOnKeyPress(salvarProduto, 'Enter');
       {produtos.map((produto) =>(
           <div className='listaProdutos' key={produto.id} style= {{
 
-            border: produto.id === produtoParaEditar?.id ? "2px solid green"  : undefined 
+            border: produto.id === produtoParaEditar?.id ? "4px solid green"  : undefined 
           }}>
             <p>{produto.title}</p>
               <div>
